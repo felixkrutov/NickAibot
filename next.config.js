@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // говорим Next.js, что нужно делать статический экспорт
-  output: 'export',
-  // добавляем под‑путь, совпадающий с именем репозитория
-  basePath: '/nickai-chatgpt-style',
-  assetPrefix: '/nickai-chatgpt-style',
+  // 1. Убираем старый export (он нужен только для GitHub Pages)
+  // 2. Никаких basePath/assetPrefix не задаём
+  images: { unoptimized: true }   // ← это оставляем, иначе ругнётся на Supabase‑аватары
 };
 
 module.exports = nextConfig;
