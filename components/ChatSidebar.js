@@ -25,6 +25,11 @@ export default function ChatSidebar({
     setEditId(null);
   };
 
+  const handleChatSelect = (chatId) => {
+    onSelect(chatId); // Переключаем чат
+    setIsMenuOpen(false); // Закрываем меню на мобильных
+  };
+
   const isAdmin = userEmail === ADMIN_EMAIL;
 
   return (
@@ -68,7 +73,7 @@ export default function ChatSidebar({
                   autoFocus
                 />
               ) : (
-                <div onClick={() => onSelect(c.id)} className="flex justify-between items-center">
+                <div onClick={() => handleChatSelect(c.id)} className="flex justify-between items-center">
                   <span className="truncate">{c.title}</span>
                   <span className="opacity-0 group-hover:opacity-100 space-x-1">
                     <button onClick={() => startEdit(c)}>✏️</button>
