@@ -1,8 +1,26 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-html,body,#__next { height: 100%; }
-body { @apply bg-gray-900 text-gray-100 font-sans; font-family: 'Inter', sans-serif; }
+html, body, #__next {
+  height: 100%;
+}
+
+/* Основа - Telegram Dark Violet (База - черный) */
+body {
+  /* Фон черный, текст светло-нейтральный */
+  @apply bg-black text-neutral-300 font-sans antialiased;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Скроллбар в стиле Telegram Dark Violet */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #000000; border-radius: 10px; } /* bg-black */
+::-webkit-scrollbar-thumb { background: #262626; border-radius: 10px; } /* bg-neutral-800 */
+::-webkit-scrollbar-thumb:hover { background: #404040; } /* bg-neutral-700 */
+
+/* Убираем кастомный цвет и градиент, т.к. фон черный */
+/* .radial-gradient-deep-space { ... } */
